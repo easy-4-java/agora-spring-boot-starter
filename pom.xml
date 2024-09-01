@@ -54,12 +54,6 @@
 			<name>Maven Central Staging Repository</name>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
-		<snapshotRepository>
-			<id>wans-hz-wisdom-base-maven</id>
-			<name>maven</name>
-			<url>https://wans-hz-maven.pkg.coding.net/repository/base-platform/maven/</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
