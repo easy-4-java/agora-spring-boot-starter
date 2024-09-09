@@ -21,7 +21,7 @@ https://docs.agora.io/cn/Recording/landing-page?platform=Linux
 <dependency>
 	<groupId>com.github.hiwepy</groupId>
 	<artifactId>agora-spring-boot-starter</artifactId>
-	<version>1.0.0.RELEASE</version>
+	<version>2.3.x-20240823-RELEASE</version>
 </dependency>
 ```
 
