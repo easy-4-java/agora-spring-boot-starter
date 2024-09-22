@@ -17,11 +17,11 @@ package io.agora.spring.boot;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.agora.spring.boot.resp.AcquireResourceResponse;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 public class AgoraApplication_Test {
