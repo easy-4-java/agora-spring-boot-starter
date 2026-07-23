@@ -19,7 +19,7 @@ https://docs.agora.io/cn/Recording/landing-page?platform=Linux
 
 ``` xml
 <dependency>
-	<groupId>com.github.hiwepy</groupId>
+	<groupId>io.github.easy4j</groupId>
 	<artifactId>agora-spring-boot-starter</artifactId>
 	<version>1.0.0.RELEASE</version>
 </dependency>
