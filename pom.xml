@@ -315,6 +315,9 @@
                 </activation>
             <properties>
                 <additionalparam>-Xdoclint:none</additionalparam>
+                <commons-io.version>2.22.0</commons-io.version>
+                <okhttp.version>4.12.0</okhttp.version>
+                <slf4j.version>2.0.18</slf4j.version>
             </properties>
         </profile>
         <profile>
