@@ -36,9 +36,15 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
 /**
- * OkHttp3 常规请求模板
+ * OkHttp3 based request template for the Agora REST API.
+ * <p>
+ * Wraps an {@link OkHttpClient} with Agora-specific authentication (HTTP basic
+ * auth using the configured {@code loginKey} / {@code loginSecret}), JSON
+ * serialisation and both synchronous and asynchronous request helpers.
+ * </p>
  *
- * @author ： <a href="https://github.com/hiwepy">wandl</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @Slf4j
 public class AgoraOkHttp3Template implements InitializingBean {
@@ -60,10 +66,10 @@ public class AgoraOkHttp3Template implements InitializingBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		// 请求编码，默认：UTF-8
+		// Request encoding, default: UTF-8
 		// String charset = properties.getProperty(HTTP_CHARSET, "UTF-8");
 		if (okhttp3Client == null) {
-			// 1.创建OkHttpClient对象
+			// 1. Create the OkHttpClient instance
 			okhttp3Client = new OkHttpClient().newBuilder().connectTimeout(5000, TimeUnit.MILLISECONDS)
 					// .hostnameVerifier(okhttpHostnameVerifier)
 					// .followRedirects(properties.isFollowRedirects())
@@ -81,13 +87,15 @@ public class AgoraOkHttp3Template implements InitializingBean {
 	}
 
 	/**
-	 * restful请求认证
+	 * Builds the HTTP basic authentication header value.
+	 *
+	 * @return the {@code Authorization} header value
 	 */
 	private String getAuthorizationHeader() {
-		// 1、拼接客户 ID 和客户密钥并使用 base64 编码
+		// 1. Concatenate the customer id and secret and base64 encode them
 		String plainCredentials = agoraProperties.getLoginKey() + ":" + agoraProperties.getLoginSecret();
 		String base64Credentials = new String(Base64.getEncoder().encode(plainCredentials.getBytes()));
-		// 2、创建 authorization header
+		// 2. Build the authorization header
 		return "Basic " + base64Credentials;
 	}
 

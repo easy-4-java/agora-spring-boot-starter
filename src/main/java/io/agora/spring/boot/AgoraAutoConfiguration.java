@@ -11,10 +11,41 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Spring Boot auto-configuration for the Agora RTC/RTM and cloud recording integration.
+ * <p>
+ * Registers an {@link AgoraOkHttp3Template} for calling the Agora REST API and an
+ * {@link AgoraTemplate} facade exposing token generation and channel / recording
+ * operations. Both beans rely on {@link AgoraProperties} bound to the
+ * {@code agora.*} namespace.
+ * </p>
+ *
+ * <h3>Configuration</h3>
+ * <ul>
+ *   <li>{@code agora.app-id} — Agora application id</li>
+ *   <li>{@code agora.app-certificate} — Agora application certificate</li>
+ *   <li>{@code agora.login-key} / {@code agora.login-secret} — REST API credentials (required)</li>
+ *   <li>{@code agora.expiration-time-in-seconds} — token validity (default {@code 3600})</li>
+ *   <li>{@code agora.oss-region} — recording region (e.g. {@code 7} Hong Kong, {@code 10} Singapore)</li>
+ * </ul>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @Configuration
 @EnableConfigurationProperties({ AgoraProperties.class})
 public class AgoraAutoConfiguration {
 
+	/**
+	 * Creates the {@link AgoraOkHttp3Template} used to call the Agora REST API.
+	 * <p>Falls back to default {@link OkHttpClient} and {@link ObjectMapper}
+	 * instances when none are provided by the application context.</p>
+	 *
+	 * @param okhttp3ClientProvider optional OkHttpClient provider
+	 * @param objectMapperProvider  optional ObjectMapper provider
+	 * @param poolProperties        the bound {@code agora.*} properties
+	 * @return a configured {@link AgoraOkHttp3Template}
+	 */
 	@Bean
 	public AgoraOkHttp3Template agoraOkHttp3Template(ObjectProvider<OkHttpClient> okhttp3ClientProvider,
 													 ObjectProvider<ObjectMapper> objectMapperProvider,
@@ -35,6 +66,16 @@ public class AgoraAutoConfiguration {
 		return new AgoraOkHttp3Template(okhttp3Client, objectMapper, poolProperties);
 	}
 
+	/**
+	 * Creates the {@link AgoraTemplate} facade.
+	 * <p>Falls back to a no-op {@link AgoraUserIdProvider} when the application
+	 * does not provide one.</p>
+	 *
+	 * @param agoraUserIdProvider    optional user id provider
+	 * @param agoraOkHttp3Template   the OkHttp template
+	 * @param poolProperties         the bound {@code agora.*} properties
+	 * @return a configured {@link AgoraTemplate}
+	 */
 	@Bean
 	public AgoraTemplate agoraTemplate(ObjectProvider<AgoraUserIdProvider> agoraUserIdProvider,
 									   AgoraOkHttp3Template agoraOkHttp3Template,

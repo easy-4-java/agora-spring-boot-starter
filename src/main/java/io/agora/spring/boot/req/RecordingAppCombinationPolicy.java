@@ -16,8 +16,10 @@
 package io.agora.spring.boot.req;
 
 /**
- * 应用设置
- * https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=RESTful#appsCollection
+ * Application combination policy used by the {@code appsCollection} recording setting.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 public enum RecordingAppCombinationPolicy {
 

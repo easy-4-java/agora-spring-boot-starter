@@ -29,6 +29,13 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+/**
+ * Asynchronous variant of {@link AgoraCloudRecordingOperations}; uses the
+ * OkHttp callback API and delivers responses via {@link java.util.function.Consumer}s.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 public class AgoraCloudRecordingAsyncOperations extends AgoraCloudRecordingOperations {
 
 	public AgoraCloudRecordingAsyncOperations(AgoraTemplate agoraTemplate) {
