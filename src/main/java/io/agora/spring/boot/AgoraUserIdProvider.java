@@ -15,12 +15,34 @@
  */
 package io.agora.spring.boot;
 
+/**
+ * Strategy for mapping between Agora channel names and application user ids.
+ * <p>The default implementation is an identity mapping, suitable when channel
+ * names and user ids coincide.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 public interface AgoraUserIdProvider {
 
+	/**
+	 * Resolves a user id for the given channel.
+	 *
+	 * @param appid   the Agora application id
+	 * @param channel the channel name
+	 * @return the resolved user id (defaults to the channel name)
+	 */
 	default String getUserIdByChannel(String appid, String channel)  {
 		return channel;
 	}
-	
+
+	/**
+	 * Resolves a channel name for the given user id.
+	 *
+	 * @param appid  the Agora application id
+	 * @param userId the user id
+	 * @return the resolved channel name (defaults to the user id)
+	 */
 	default String getChannelByUserId(String appid, String userId) {
 		return userId;
 	}

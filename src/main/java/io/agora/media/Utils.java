@@ -8,7 +8,12 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Date;
-import java.util.zip.CRC32;
+import java.util.zip.CRC32;/**
+ * Miscellaneous helper utilities for the Agora media package.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public class Utils {
     public static final long HMAC_SHA256_LENGTH = 32;

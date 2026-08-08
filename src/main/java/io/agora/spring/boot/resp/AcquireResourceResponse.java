@@ -20,7 +20,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode;/**
+ * Response of the {@code acquire} cloud recording request, carrying the resource id.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 @Data
 @EqualsAndHashCode(callSuper=false)
@@ -29,7 +34,7 @@ import lombok.EqualsAndHashCode;
 public class AcquireResourceResponse extends AgoraResponse {
 
 	/**
-	 * 1、云端录制资源 resource ID，使用这个 resource ID 可以开始一段云端录制。这个 resource ID 的有效期为 5 分钟，超时需要重新请求。
+	 * Cloud recording resource ID. Use this resource ID to start a cloud recording. The resource ID is valid for 5 minutes; re-acquire it after it expires.
 	 */
 	@JsonProperty("resourceId")
 	private String resourceId;

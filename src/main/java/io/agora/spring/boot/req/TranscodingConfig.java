@@ -7,7 +7,10 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 视频布局配置
+ * Transcoding configuration for composite recordings.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

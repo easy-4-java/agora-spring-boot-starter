@@ -7,7 +7,10 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 录制设置：用于设置媒体流订阅的 JSON Object。云端录制会根据此设置订阅频道内的媒体流，并生成录制文件或截图
+ * Media stream subscription, transcoding and output configuration for a cloud recording.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

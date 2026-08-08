@@ -4,36 +4,39 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * ons 多线程发送配置参数 corePoolSize 线程池核心池的大小 maximumPoolSize 线程池中允许的最大线程数量
- * keepAliveTime 当线程数大于核心时，此为终止前多余的空闲线程等待新任务的最长时间 unit keepAliveTime 的时间单位
+ * Configuration properties for the Agora starter, bound to the {@code agora.*}
+ * namespace.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @ConfigurationProperties(prefix = AgoraProperties.PREFIX)
 @Data
 public class AgoraProperties {
 
 	/**
-	 * The prefix of the property of { AgoraProperties}.
+	 * Configuration prefix used by Spring Boot to bind properties.
 	 */
 	public static final String PREFIX = "agora";
 
-	/** appId */
+	/** Agora application id. */
 	private String appId;
-	/** 证书 */
+	/** Agora application certificate used to sign tokens. */
 	private String appCertificate;
-	/** token过期时间 */
+	/** Token validity in seconds (default {@code 3600}). */
 	private int expirationTimeInSeconds = 3600;
-	/** 声网restful登录key: 必填 */
+	/** Agora REST API login key (required). */
 	private String loginKey;
-	/** 声网restful登录密钥: 必填 */
+	/** Agora REST API login secret (required). */
 	private String loginSecret;
 
-	/** 录制区域选择 7-香港 10 -新加坡 */
+	/** Recording region selector, e.g. {@code 7} Hong Kong, {@code 10} Singapore. */
 	private Integer ossRegion;
 
-	/** 声网视频宽度 */
+	/** Agora video width in pixels. */
 	private Integer viewWidth;
 
-	/** 声网视频高度 */
+	/** Agora video height in pixels. */
 	private Integer viewHeight;
 
 }

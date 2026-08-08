@@ -5,114 +5,63 @@ import java.text.MessageFormat;
 /**
  * https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=RESTful
  * https://docs.agora.io/cn/Video/channel_management_overview?platform=RESTful
- * @author 		： &lt;a href="https://github.com/hiwepy"&gt;hiwepy&lt;/a&gt;
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public enum AgoraApiAddress {
 
-	// ---------------- 云端录制 ------------------
+	// ---------------- Cloud recording ------------------
 
-	/**
-	 * 获取云端录制资源ID
-	 * URL: https://api.agora.io/v1/apps/&lt;yourappid&gt;/cloud_recording/acquire
-	 */
-	ACQUIRE_RESOURCE_ID("获取云端录制资源ID", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/acquire"),
-	/**
-	 * 开始云端录制
-	 * URL: https://api.agora.io/v1/apps/&lt;yourappid&gt;/cloud_recording/resourceid/&lt;resourceid&gt;/mode/&lt;mode&gt;/start
-	 */
-	START_CLOUD_RECORDING("开始云端录制", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/mode/{2}/start"),
-	/**
-	 * 更新云端录制
-	 * URL: https://api.agora.io/v1/apps/&lt;appid&gt;/cloud_recording/resourceid/&lt;resourceid&gt;/sid/&lt;sid&gt;/mode/&lt;mode&gt;/updateLayout
-	 */
-	UPDATE_CLOUD_RECORDING("更新云端录制", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/updateLayout"),
-	/**
-	 * 更新合流布局
-	 * URL: https://api.agora.io/v1/apps/&lt;appid&gt;/cloud_recording/resourceid/&lt;resourceid&gt;/sid/&lt;sid&gt;/mode/&lt;mode&gt;/update
-	 */
-	UPDATE_CLOUD_RECORDING_LAYOUT("更新合流布局", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/update"),
-	/**
-	 * 查询云端录制状态
-	 * URL: https://api.agora.io/v1/apps/&lt;yourappid&gt;/cloud_recording/resourceid/&lt;resourceid&gt;/sid/&lt;sid&gt;/mode/&lt;mode&gt;/query
-	 */
-	QUERY_CLOUD_RECORDING("查询云端录制状态", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/query"),
-	/**
-	 * 停止云端录制
-	 * URL:  https://api.agora.io/v1/apps/&lt;yourappid&gt;/cloud_recording/resourceid/&lt;resourceid&gt;/sid/&lt;sid&gt;/mode/&lt;mode&gt;/stop
-	 */
-	STOP_CLOUD_RECORDING("停止云端录制", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/stop"),
+	/** Acquire a cloud recording resource id. */
+	ACQUIRE_RESOURCE_ID("Acquire cloud recording resource id", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/acquire"),
+	/** Start a cloud recording session. */
+	START_CLOUD_RECORDING("Start cloud recording", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/mode/{2}/start"),
+	/** Update a cloud recording session. */
+	UPDATE_CLOUD_RECORDING("Update cloud recording", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/updateLayout"),
+	/** Update the mixed-stream layout of a cloud recording. */
+	UPDATE_CLOUD_RECORDING_LAYOUT("Update mixed-stream layout", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/update"),
+	/** Query the status of a cloud recording. */
+	QUERY_CLOUD_RECORDING("Query cloud recording status", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/query"),
+	/** Stop a cloud recording session. */
+	STOP_CLOUD_RECORDING("Stop cloud recording", RequestMethod.POST,"https://api.agora.io/v1/apps/{0}/cloud_recording/resourceid/{1}/sid/{2}/mode/{3}/stop"),
 
-	// ---------------- 项目管理 ------------------
+	// ---------------- Project management ------------------
 
-	/**
-	 * 创建项目
-	 */
-	PROJECT_POST("创建项目", RequestMethod.POST,"https://api.agora.io/v1/project"),
-	/**
-	 * 获取指定项目
-	 */
-	PROJECT_GET("获取指定项目", RequestMethod.POST,"https://api.agora.io/v1/project"),
-	/**
-	 * 获取所有项目
-	 */
-	PROJECTS_GET("获取所有项目", RequestMethod.POST,"https://api.agora.io/v1/projects"),
-	/**
-	 * 禁用或启用项目
-	 */
-	PROJECT_STATUS_POST("禁用或启用项目", RequestMethod.POST,"https://api.agora.io/v1/projects_status"),
-	/**
-	 *获取指定项目的用量数据
-	 */
-	PROJECT_USAGE_GET("获取指定项目的用量数据", RequestMethod.POST,"https://api.agora.io/v3/usage"),
-	/**
-	 * 设置录制服务器 IP
-	 */
-	RECORDING_CONFIG_POST("设置录制服务器 IP", RequestMethod.POST,"https://api.agora.io/v1/recording_config"),
-	/**
-	 * 启用或禁用主要 App 证书
-	 */
-	SIGNKEY_POST("启用或禁用主要 App 证书", RequestMethod.POST,"https://api.agora.io/v1/signkey"),
-	/**
-	 *重置主要 App 证书
-	 */
-	SIGNKEY_RESET_POST("重置主要 App 证书", RequestMethod.POST,"https://api.agora.io/v1/reset_signkey"),
+	/** Create a project. */
+	PROJECT_POST("Create project", RequestMethod.POST,"https://api.agora.io/v1/project"),
+	/** Get a specific project. */
+	PROJECT_GET("Get project", RequestMethod.POST,"https://api.agora.io/v1/project"),
+	/** List all projects. */
+	PROJECTS_GET("List projects", RequestMethod.POST,"https://api.agora.io/v1/projects"),
+	/** Enable or disable a project. */
+	PROJECT_STATUS_POST("Enable/disable project", RequestMethod.POST,"https://api.agora.io/v1/projects_status"),
+	/** Get usage data for a specific project. */
+	PROJECT_USAGE_GET("Get project usage", RequestMethod.POST,"https://api.agora.io/v3/usage"),
+	/** Set the recording server IP. */
+	RECORDING_CONFIG_POST("Set recording server IP", RequestMethod.POST,"https://api.agora.io/v1/recording_config"),
+	/** Enable or disable the primary App certificate. */
+	SIGNKEY_POST("Enable/disable App certificate", RequestMethod.POST,"https://api.agora.io/v1/signkey"),
+	/** Reset the primary App certificate. */
+	SIGNKEY_RESET_POST("Reset App certificate", RequestMethod.POST,"https://api.agora.io/v1/reset_signkey"),
 
-	// ---------------- 封禁用户权限 ------------------
+	// ---------------- Kicking rules ------------------
 
-	/**
-	 * 创建封禁用户权限规则
-	 */
-	KICKING_RULE_POST("创建封禁用户权限规则", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
-	/**
-	 * 获取封禁用户权限规则列表
-	 */
-	KICKING_RULE_GET("获取封禁用户权限规则列表", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
-	/**
-	 * 更新封禁用户权限规则的生效时间
-	 */
-	KICKING_RULE_PUT("更新封禁用户权限规则的生效时间", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
-	/**
-	 * 删除封禁用户权限规则
-	 */
-	KICKING_RULE_DELETE("删除封禁用户权限规则", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
+	/** Create a kicking rule. */
+	KICKING_RULE_POST("Create kicking rule", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
+	/** List kicking rules. */
+	KICKING_RULE_GET("List kicking rules", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
+	/** Update the effective time of a kicking rule. */
+	KICKING_RULE_PUT("Update kicking rule", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
+	/** Delete a kicking rule. */
+	KICKING_RULE_DELETE("Delete kicking rule", RequestMethod.POST,"https://api.agora.io/v1/kicking-rule"),
 
-	// ---------------- 查询在线频道信息 ------------------
+	// ---------------- Online channel queries ------------------
 
-	/**
-	 * 查询用户状态
-	 * URL:  https://api.agora.io/v1/channel/user/property/{appid}/{uid}/{channelName}
-	 */
-	CHANNEL_USER_STATE("查询用户状态", RequestMethod.GET,"https://api.agora.io/dev/v1/channel/user/property/{0}/{1}/{2}"),
-	/**
-	 * 获取用户列表
-	 * URL:  https://api.agora.io/v1/channel/user/{appid}/{channelName}
-	 */
-	CHANNEL_USER_LIST("获取用户列表", RequestMethod.GET,"https://api.agora.io/dev/v1/channel/user/{0}/{1}"),
-	/**
-	 * 分页查询项目的频道列表
-	 * URL:  https://api.agora.io/v1/channel/{appid}
-	 */
-	CHANNEL_LIST("分页查询项目的频道列表", RequestMethod.GET,"https://api.agora.io/dev/v1/channel/{0}"),
+	/** Query the state of a user in a channel. */
+	CHANNEL_USER_STATE("Query user state", RequestMethod.GET,"https://api.agora.io/dev/v1/channel/user/property/{0}/{1}/{2}"),
+	/** List the users in a channel. */
+	CHANNEL_USER_LIST("List channel users", RequestMethod.GET,"https://api.agora.io/dev/v1/channel/user/{0}/{1}"),
+	/** Paginated list of channels for a project. */
+	CHANNEL_LIST("List project channels", RequestMethod.GET,"https://api.agora.io/dev/v1/channel/{0}"),
 
 	 ;
 

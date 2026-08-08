@@ -15,6 +15,12 @@
  */
 package io.agora.spring.boot;
 
+/**
+ * Asynchronous variant of {@link AgoraChannelManagerOperations}.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 public class AgoraChannelManagerAsyncOperations extends AgoraChannelManagerOperations {
 
 	public AgoraChannelManagerAsyncOperations(AgoraTemplate agoraTemplate) {

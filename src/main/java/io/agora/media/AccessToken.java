@@ -4,7 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.TreeMap;
 
-import static io.agora.media.Utils.crc32;
+import static io.agora.media.Utils.crc32;/**
+ * Agora access token builder used to sign RTC/RTM dynamic keys.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public class AccessToken {
     public enum Privileges {
