@@ -8,7 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 录制文件设置
+ * Recording file output configuration (format, storage path and so on).
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

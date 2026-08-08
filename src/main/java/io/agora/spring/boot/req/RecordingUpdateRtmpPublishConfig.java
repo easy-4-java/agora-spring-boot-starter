@@ -8,12 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 截图设置 
- * 1、使用云端录制进行截图，需要注意以下参数的设置。设置错误会收到报错，或无法生成截图文件。 
- * a、请求 URL 中的 mode 参数必须设为individual。 
- * b、如果在一个录制进程中同时进行录制和截图，则必须设置 recordingFileConfig参数；
- * c、如果在一个录制进程中仅截图，则不可设置该参数。 streamTypes 必须设置为 1 或 2。 
- * d、如果设置了 subscribeAudioUid，则必须同时设置 subscribeVideoUids。
+ * RTMP publish parameters used when updating a web recording.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data

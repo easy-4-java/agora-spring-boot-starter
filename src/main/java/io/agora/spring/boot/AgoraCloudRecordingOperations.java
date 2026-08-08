@@ -27,9 +27,14 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 1、云端录制
- * https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=RESTful
- * https://docs.agora.io/cn/cloud-recording/cloud_recording_individual_mode?platform=RESTful
+ * Cloud recording operations for the Agora REST API.
+ * <p>Covers the full lifecycle: resource acquisition, recording start, update,
+ * layout update, status query and stop.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ * @see <a href="https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=RESTful">cloud recording REST API</a>
+ * @see <a href="https://docs.agora.io/cn/cloud-recording/cloud_recording_individual_mode?platform=RESTful">individual mode</a>
  */
 public class AgoraCloudRecordingOperations extends AgoraOperations {
 
