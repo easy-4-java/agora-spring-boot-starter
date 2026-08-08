@@ -1,6 +1,11 @@
 package io.agora.rtm;
 
-import io.agora.media.AccessToken;
+import io.agora.media.AccessToken;/**
+ * Builder for Agora RTM (real-time messaging) tokens.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public class RtmTokenBuilder {
     public enum Role {

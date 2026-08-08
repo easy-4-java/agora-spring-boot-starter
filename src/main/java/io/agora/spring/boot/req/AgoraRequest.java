@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 /**
- * 声网请求参数
- *      详情参考文档： https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=RESTful#acquire-%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B
+ * Generic envelope for Agora REST API request bodies.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
- * 应用设置
+ * Application settings ({@code appsCollection}) for a cloud recording session.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

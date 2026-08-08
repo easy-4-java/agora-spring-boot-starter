@@ -17,7 +17,12 @@ package io.agora.spring.boot.resp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
+import lombok.Data;/**
+ * Status of a cloud recording sub-service.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
