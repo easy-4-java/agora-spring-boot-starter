@@ -7,7 +7,10 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 存储参数(阿里云配置)
+ * Third-party cloud storage configuration for recorded files.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

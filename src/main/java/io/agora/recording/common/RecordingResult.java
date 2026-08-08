@@ -1,7 +1,12 @@
 package io.agora.recording.common;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Data;/**
+ * Result object describing the outcome of a recording operation.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 @Data
 @Builder

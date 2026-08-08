@@ -7,6 +7,15 @@ package io.agora.spring.boot;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Optional auto-configuration for the local (on-premise) Agora recording SDK.
+ * <p>Activates the {@link io.agora.recording.RecordingSDK} when the local
+ * recording integration is required. The bean wiring is currently commented
+ * out and left as an extension point.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @Configuration
 @EnableConfigurationProperties({ AgoraRecordingProperties.class})
 public class AgoraLocalRecordingConfiguration {

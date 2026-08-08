@@ -4,6 +4,13 @@ import io.agora.recording.common.Common.*;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * Configuration properties for the local (on-premise) Agora recording SDK,
+ * bound to the {@code agora.recording.*} namespace.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @ConfigurationProperties(prefix = AgoraRecordingProperties.PREFIX)
 @Data
 public class AgoraRecordingProperties {
@@ -293,9 +300,7 @@ public class AgoraRecordingProperties {
    */
   private boolean enableH265Support = false;
 
-  /**
-   * SDK 库存放地址
-   */
+  /** Filesystem path of the native Agora recording SDK library. */
   private String libPath;
 
 }
