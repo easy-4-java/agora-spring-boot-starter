@@ -6,7 +6,10 @@ import org.apache.commons.codec.binary.Hex;
 import java.util.TreeMap;
 
 /**
- * Created by Li on 10/1/2016.
+ * Agora dynamic key (version 5) generator.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 public class DynamicKey5 {
     public final static String version = "005";

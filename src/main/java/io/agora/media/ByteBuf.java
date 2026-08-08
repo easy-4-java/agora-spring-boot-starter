@@ -6,7 +6,10 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Created by Li on 10/1/2016.
+ * Big-endian byte buffer helper used while serialising Agora tokens.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 public class ByteBuf {
     ByteBuffer buffer = ByteBuffer.allocate(1024).order(ByteOrder.LITTLE_ENDIAN);
