@@ -6,7 +6,7 @@ import okhttp3.MediaType;
 
 /**
  * https://docs.agora.io/cn/Interactive%20Broadcast/rtc_channel_event?platform=RESTful
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 
 @Slf4j

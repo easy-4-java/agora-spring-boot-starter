@@ -38,7 +38,7 @@ import java.util.function.Consumer;
 /**
  * OkHttp3 常规请求模板
  *
- * @author ： <a href="https://github.com/hiwepy">wandl</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Slf4j
 public class AgoraOkHttp3Template implements InitializingBean {
