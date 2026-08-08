@@ -6,7 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
- * 响应结果
+ * Base response envelope for all Agora REST API calls.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -14,7 +17,7 @@ import lombok.Data;
 public class AgoraResponse {
 
 	/**
-	 * 响应状态码，200表示成功，非200表示失败
+	 * Response status code; 200 means success, any other value means failure
 	 * https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=RESTful#status
 	 */
 	@JsonProperty("Code")

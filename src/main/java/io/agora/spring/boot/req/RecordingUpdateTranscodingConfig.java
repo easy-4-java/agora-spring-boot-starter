@@ -7,7 +7,10 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 更新合流布局设置 
+ * Transcoding layout update parameters.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data

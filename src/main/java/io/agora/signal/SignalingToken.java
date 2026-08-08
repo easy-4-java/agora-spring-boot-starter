@@ -1,7 +1,12 @@
 package io.agora.signal;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchAlgorithmException;/**
+ * Agora signaling token generator.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public class SignalingToken {
 

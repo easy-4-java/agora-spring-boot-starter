@@ -1,7 +1,12 @@
 package io.agora.recording;
 
 import io.agora.recording.common.Common.*;
-import io.agora.recording.common.RecordingConfig;
+import io.agora.recording.common.RecordingConfig;/**
+ * Callback interface for events raised by the local recording SDK.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public interface RecordingEventHandler {
 

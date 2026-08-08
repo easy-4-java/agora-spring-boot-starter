@@ -7,7 +7,10 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 扩展服务的设置，目前包括阿里云视频点播服务和页面录制的设置
+ * Extension service configuration (e.g. Aliyun VOD or web page recording).
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @JsonInclude( JsonInclude.Include.NON_NULL)
 @Data

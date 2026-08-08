@@ -1,4 +1,9 @@
-package io.agora.media;
+package io.agora.media;/**
+ * Builder for Agora RTC tokens (uid and user account variants).
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public class RtcTokenBuilder {
 	public enum Role {
