@@ -19,7 +19,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode;/**
+ * Response describing the state of a user within a channel.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 @Data
 @EqualsAndHashCode(callSuper=false)

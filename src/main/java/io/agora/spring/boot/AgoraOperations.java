@@ -24,8 +24,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Tim 接口集成
- * https://cloud.tencent.com/document/product/269/42440
+ * Base class for Agora REST API operation bundles.
+ * <p>
+ * Provides shared helpers for token/user-id resolution and synchronous /
+ * asynchronous GET and POST calls against the Agora REST endpoints.
+ * </p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 @Slf4j
 public abstract class AgoraOperations {
@@ -41,20 +47,20 @@ public abstract class AgoraOperations {
 	}
 
 	/**
-	 * 根据Agora频道名称获取用户id
+	 * Resolves a user id for the given Agora channel name.
 	 *
-	 * @param channel Agora频道名称
-	 * @return 从Agora频道名称解析出来的用户ID
+	 * @param channel the Agora channel name
+	 * @return the user id resolved from the channel name
 	 */
 	protected String getUserIdByChannel(String channel) {
 		return agoraTemplate.getUserIdByChannel(channel);
 	}
 
 	/**
-	 * 根据用户id获取Agora频道名称
+	 * Resolves an Agora channel name for the given user id.
 	 *
-	 * @param userId 用户ID
-	 * @return 用户ID生成的Agora频道名称
+	 * @param userId the user id
+	 * @return the channel name generated for the user id
 	 */
 	protected String getChannelByUserId(String userId) {
 		return agoraTemplate.getChannelByUserId(userId);

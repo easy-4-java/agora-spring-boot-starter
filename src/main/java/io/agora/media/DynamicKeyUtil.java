@@ -6,8 +6,10 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by hefeng on 15/8/10.
- * Util to generate Agora media dynamic key.
+ * Utility helpers shared by the dynamic key generators.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 public class DynamicKeyUtil {
 

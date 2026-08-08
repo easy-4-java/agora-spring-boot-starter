@@ -1,21 +1,24 @@
 package io.agora.spring.boot;
 
 /**
- * 声网相关的常量
+ * Agora-specific constants such as endpoint URLs and default recording values.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
 public interface AgoraConstant {
 
-    // 获取频道内的所有用户
+    // Get all users in a channel
     // https://api.agora.io/dev/v1/channel/user/{appid}/{channelName}
     String URL_CHANNEL_USER = "https://api.agora.io/dev/v1/channel/user/{0}/{1}";
 
-    // 用户禁封
+    // User kicking/ban rule endpoint
     // https://api.agora.io/dev/v1/kicking-rule
     String URL_RULE = "https://api.agora.io/dev/v1/kicking-rule";
 
-    // 录制请求的uid
+    // Default UID used by recording requests
     String RECORDING_UID = "10";
 
-    // 存储位置 /video/{{yyyy-MM-dd}}
+    // Storage location /video/{{yyyy-MM-dd}}
     String VEIDO_PAHT = "video";
 }
