@@ -2,7 +2,12 @@ package io.agora.recording.common;
 
 import io.agora.recording.RecordingSDK;
 import io.agora.recording.common.Common.*;
-import lombok.Data;
+import lombok.Data;/**
+ * Media stream subscription, transcoding and output configuration for a cloud recording.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 @Data
 public class RecordingConfig {

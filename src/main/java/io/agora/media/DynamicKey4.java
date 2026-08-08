@@ -1,6 +1,11 @@
 package io.agora.media;
 
-import java.io.ByteArrayOutputStream;
+import java.io.ByteArrayOutputStream;/**
+ * Agora dynamic key (version 4) generator.
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 
 public class DynamicKey4 {
 
