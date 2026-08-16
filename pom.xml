@@ -368,6 +368,7 @@
                 </activation>
             <properties>
                 <additionalparam>-Xdoclint:none</additionalparam>
+        <agora-java-sdk.version>1.0.x.20260630-SNAPSHOT</agora-java-sdk.version>
             </properties>
         </profile>
         <profile>
@@ -473,10 +474,7 @@
 
         <!-- Dependency versions -->
         <activation.version>1.1.1</activation.version>
-        <commons-codec.version>1.16.0</commons-codec.version>
         <lombok.version>1.18.30</lombok.version>
-        <fastjson2.version>2.0.44</fastjson2.version>
-        <guava.version>33.0.0-jre</guava.version>
         <maven.version>3.0</maven.version>
            <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-jacoco-plugin.version>0.8.15</maven-jacoco-plugin.version>
@@ -486,8 +484,6 @@
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
-                <commons-io.version>2.22.0</commons-io.version>
-                <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
                 <okhttp.version>4.12.0</okhttp.version>
                 <slf4j.version>2.0.18</slf4j.version>
     </properties>
@@ -495,31 +491,7 @@
     <dependencyManagement>
 
         <dependencies>
-            <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>${commons-codec.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
-            <dependency>
-                <groupId>com.alibaba.fastjson2</groupId>
-                <artifactId>fastjson2</artifactId>
-                <version>${fastjson2.version}</version>
-            </dependency>
-                <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet-api.version}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
+<dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
@@ -530,12 +502,16 @@
             <version>${okhttp.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-            <scope>test</scope>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp.version}</version>
         </dependency>
-</dependencies>
+        <dependency>
+            <groupId>io.github.easy4j</groupId>
+            <artifactId>agora-java-sdk</artifactId>
+            <version>${agora-java-sdk.version}</version>
+        </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <dependencies>
@@ -547,15 +523,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- Java Servlet API -->
-        <!-- For Servlet Api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet-api.version}</version>
-            <optional>true</optional>
-        </dependency>
-
         <!-- For Slf4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -563,6 +530,12 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+
+        <!-- Source: https://github.com/easy-4-java/agora-java-sdk — easy4j agora-java-sdk -->
+        <dependency>
+            <groupId>io.github.easy4j</groupId>
+            <artifactId>agora-java-sdk</artifactId>
+        </dependency>
         <!-- Core starter, including auto-configuration support, logging and YAML -->
         <!-- For Spring Boot -->
         <dependency>
@@ -590,27 +563,7 @@
             <scope>test</scope>
         </dependency>
 
-          <!-- For Commons Codec -->
-          <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-        </dependency>
-        <!-- For Guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-        </dependency>
-        <!-- For Jackson -->
+          <!-- For Jackson -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
               <artifactId>jackson-databind</artifactId>
@@ -621,32 +574,12 @@
             <artifactId>okhttp</artifactId>
             <version>${okhttp.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <!-- For Fastjson2 -->
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2</artifactId>
-        </dependency>
-
-            <!-- For JUnit -->
+        <!-- For JUnit -->
             <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- For Commons IO -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-            <scope>test</scope>
-        </dependency>
-            <!-- For JUnit Jupiter -->
-            <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+        </dependencies>
 
 </project>
