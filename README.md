@@ -45,7 +45,7 @@
 | Capability | Status | Description |
 |---|:---:|---|
 | Auto-configuration | ✅ Stable | Registers agora beans automatically |
-| Property Binding | ✅ Stable | Binds `agora.*` to `RecordingEngineProperties` |
+| Property Binding | ✅ Stable | Binds `agora.*` to `AgoraProperties` (inherited from agora-java-sdk POJO) |
 | `AgoraOkHttp3Template` bean | ✅ Stable | Auto-registered via AgoraAutoConfiguration |
 
 ## 3. Requirements and Compatibility

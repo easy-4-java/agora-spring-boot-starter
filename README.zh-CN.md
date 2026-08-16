@@ -45,7 +45,7 @@
 | 能力 | 状态 | 说明 |
 |---|:---:|---|
 | 自动装配 | ✅ 稳定 | 自动注册 agora 相关 Bean |
-| 属性绑定 | ✅ 稳定 | 绑定 `agora.*` 到 `RecordingEngineProperties` |
+| 属性绑定 | ✅ 稳定 | 绑定 `agora.*` 到 `AgoraProperties`（字段继承自 agora-java-sdk 的 POJO） |
 | `AgoraOkHttp3Template` Bean | ✅ 稳定 | 通过 AgoraAutoConfiguration 自动注册 |
 
 ## 3. 运行要求与兼容性
